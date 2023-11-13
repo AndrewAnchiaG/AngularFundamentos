@@ -6,13 +6,14 @@
   let isEven = even;"
   class="list-group-item"
   [ngClass]="{'list-group-item-success': isodd,
-              'list-group-item-warning': isEven}">  
+              'list-group-item-secondary': isEven}">  
   <span>{{i+1}}. </span>
   <strong>Héroe: </strong>{{character.name}} 
   -> <strong>Power:</strong> {{character.power}}
+  <button class="btn btn-outline-danger mx-1" (click)="deleteCharacter(i)">X</button>
 </li>
 </ul>
-<!-- 
+<!-- DOCS ANGULAR de NG-FOR
   $implicit: T: The value of the individual items in the iterable (ngForOf).
   ngForOf: NgIterable<T>: The value of the iterable expression. Useful when 
   the expression is more complex then a property access, for example when using the async pipe (userStreams | async).
