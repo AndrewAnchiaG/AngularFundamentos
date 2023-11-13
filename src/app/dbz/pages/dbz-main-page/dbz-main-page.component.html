@@ -1,21 +1,24 @@
-
-
 <!-- Main Page de D B Z -->
 
 <h2 class="text-center mt-5">Dragon Ball Z</h2>
 
 <!-- Se crean pequeños componentes para segmentar el código y sea mas 
     fácil de reutilizar o escalar la aplicacion incluso en caso de 
-    un error sea mas fácil de encontralo en segmentos peqeuños que 
+    un error sea mas fácil de encontralo en segmentos peqeuños que  
     una clase gigante -->
 
 <div class="row mt-2">
   <div class="col">
     <!-- Por aca insertamos el primer componente -->
-    <app-dbz-list [characterlist]="characters"></app-dbz-list>
+    <app-dbz-list
+      [characterlist]="dbzService.characters"
+      (onDeleteCharacter)="dbzService.deleteCharacter($event)"
+    ></app-dbz-list>
   </div>
   <div class="col">
     <!-- Por aca insertamos el segundo componente -->
-    <app-dbz-add-character></app-dbz-add-character>
+    <app-dbz-add-character
+      (OnNewCharacter)="dbzService.onNewCharacter($event)"
+    ></app-dbz-add-character>
   </div>
 </div>

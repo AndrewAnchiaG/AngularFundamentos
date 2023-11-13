@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
+import { DbzService } from '../../service/dbz.service';
 
 @Component({
   selector: 'app-dbz-main-page',
@@ -8,10 +9,6 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class DbzMainPageComponent {
 
-  public characters: Character[] = [
-    { name: "Goku", power: 12000 },
-    { name: "Vegeta", power: 9500 },
-    { name: "Piccolo", power: 8000 },
-    { name: "Trunks", power: 7000 }
-  ];
+  constructor(public dbzService:DbzService){}
+
 }
